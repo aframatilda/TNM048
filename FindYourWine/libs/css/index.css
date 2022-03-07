@@ -1,0 +1,308 @@
+/**** Body ****/
+div img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+}
+
+/**** World Map ****/
+#chartdiv{
+    width: 100%;
+    height: 450px;
+    margin: 5px;
+    border-width:2px;
+    border-radius: 20px;
+    border-style:solid;
+    border-color:#963A2F;
+}
+
+/**** Final wine ****/
+#name{
+    font-weight: bold;
+    font-size: 25px;
+    color: #963A2F; 
+    text-align: center;
+}
+
+#producer{
+    font-size: 20px; 
+    color: #9b3c31; 
+    font-weight: normal; 
+    text-align: center;
+}
+
+#country{
+    font-size: 17px;
+    color: #9b3c31;
+    font-weight: normal;
+    text-align: center;
+}
+
+#taste_description{
+    font-size: 15px;
+    color: #9b3c31;
+    font-weight: normal;
+    text-align: center;
+}
+
+#usage_text{
+    color: #963A2F;
+    font-size: 17px; 
+    font-weight:normal; 
+    text-align: center;
+}
+
+#taste_text{
+    color: #963A2F; 
+    font-size: 17px; 
+    font-weight:normal; 
+    text-align: center;
+}
+
+#year_text {
+    color: #963A2F; 
+    font-size: 17px; 
+    font-weight:normal; 
+    text-align: center;
+}
+
+#price_text{
+    color: #963A2F; 
+    font-size: 17px; 
+    font-weight:normal; 
+    text-align: center;
+}
+
+#finalbox{
+    height: 450px;
+    width: 100%;
+    padding: 10px;
+    margin: auto;
+    background-color:#FFFEE9;
+    border-width:2px;
+    border-radius: 20px;
+    border-style:solid;
+    border-color:#963A2F;
+    position: relative;
+}
+
+#default{
+    text-align: center;
+    color: #963A2F;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+}
+
+#usage, #taste_category, #year,#price {
+    font-weight: normal; 
+    font-size: 15px; 
+    font-weight: normal;
+    color: #ae4337;
+}
+
+#imagebox {
+    height:400px;
+    padding: 5px;
+}
+
+#textbox1{
+    height: 100%; 
+    width: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    overflow: scroll;
+    padding:10px;
+    margin-top: 10%;
+}
+
+#textbox2{
+    height: 100%; 
+    width: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color:#FFFEE9;
+    border-radius: 10px;
+    padding:10px;
+    border-width:2px;
+    border-radius: 20px;
+    border-style:solid;
+    border-color:#963A2F;
+    margin-top: 10%;
+}
+
+/**** Filter data ****/
+#type_text{
+    color: #963A2F; 
+    font-size: 20px; 
+    font-weight:bold; 
+    margin-bottom: 5px;
+}
+
+#grape_text{
+    color: #963A2F; 
+    font-size: 20px;
+    font-weight:bold;
+}
+
+#taste_text{
+    color: #963A2F; 
+    font-size: 20px; 
+    font-weight:bold; 
+    text-align: center; 
+    margin-bottom: 25px;
+}
+
+#sweetness_text{
+    color: #963A2F; 
+    font-size: 15px; 
+    text-align: center; 
+    margin-top: 20px;
+}
+
+#fruitacid_text{
+    color: #963A2F; 
+    font-size: 15px; 
+    text-align: center;
+}
+
+#fullbody_text{
+    color: #963A2F; 
+    font-size: 15px; 
+    text-align: center;
+}
+
+#filter-boxes{
+    color: #ae4337;
+}
+
+#filter{
+    height: 390px;
+    width:100%; 
+    padding:10px;
+    margin: 5px;
+    border-width:2px;
+    border-radius: 20px;
+    border-style:solid;
+    border-color:#963A2F;
+    background-color:#FFFEE9;
+}
+
+.filter-check, .filter-check2{
+    accent-color: #963A2F;
+}
+
+#filter-boxes_grapes{
+    overflow-y:scroll;
+    overflow-x: hidden;
+    height:250px; 
+    font-size: 16px;
+    border-width:2px;
+    border-radius: 10px;
+    border-style:solid;
+    border-color:#963A2F;
+    padding: 5px;
+    color:#963A2F;
+    margin-top: 20px;
+}
+
+#filter-boxes_grapes::-webkit-scrollbar {
+width: 12px;
+}
+
+#filter-boxes_grapes::-webkit-scrollbar-track {
+background: #963A2F;
+border-radius: 20px;
+}
+
+#filter-boxes_grapes::-webkit-scrollbar-thumb {
+    background-color: #D58258;
+    border-radius: 20px;
+    border: 3px solid #D58258;
+}
+
+#sweetness-slider, #fruit-slider, #body-slider{
+    margin-top: 20px; 
+    margin-bottom: 30px; 
+    fill: #963A2F;
+    stroke: none;
+}
+
+/**** Wine List ****/
+.refresh_button {
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+    background-color: rgb(236, 185, 132);
+    color: rgb(254, 253, 229);
+    border: 2px solid rgb(236, 185, 132);
+    border-radius: 20px;
+}
+
+.refresh_button:hover {
+    background-color: #963A2F;
+    border-color: #963A2F;
+    color: rgb(254, 253, 229);
+}
+
+#list{
+    height: 390px;
+    width: 100%; 
+    padding: 10px;
+    margin: 2px;
+    border-width:2px;
+    border-radius: 20px;
+    border-style:solid;
+    border-color:#963A2F;
+}
+
+#list-container{
+    height: 90%;
+    width: 100%; 
+    overflow-y:scroll;
+    overflow-x:hidden;
+    text-align:center;
+    color: #D58258;
+    font-size: 17px;
+}
+
+#list-container div:nth-child(even) {
+    background-color: rgba(236, 185, 132, 0.3);
+}
+
+#list-container div:nth-child(odd) {
+    background-color: rgba(254, 253, 229, 0.3);
+}
+
+#list-container div:hover{
+    transform: scale(1.2);
+    color: #963A2F;
+    overflow:hidden;
+}
+
+#list-container::-webkit-scrollbar {
+    width: 12px;          
+}
+  
+#list-container::-webkit-scrollbar-track {
+    background: #963A2F;      
+    border-radius: 20px;
+}
+
+#list-container::-webkit-scrollbar-thumb {
+    background-color: #D58258;   
+    border-radius: 20px;      
+    border: 3px solid #D58258;  
+}
+

@@ -1,0 +1,155 @@
+<!-- /**************************************************************/
+/*
+/* Project in course TNM048
+/* Authors: Afra Farkhooy, Julia Johnstone & Victoria Stråberg
+/*
+/**************************************************************/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Find Your Wine</title>
+  <link rel="stylesheet" href="libs/css/index.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="libs/d3/d3.slider.css" media="screen" />
+</head>
+
+
+<body style="background-color:#FFFEE9;">
+  <div><img src="/assets/images/logo.jpeg" alt="logo" /></div>
+  <div class="d-flex align-content-center flex-wrap">
+    <div class="col-sm-5">
+      <!-- World map -->
+      <div id="chartdiv"></div>
+    </div>
+
+    <!-- Final wine -->
+    <div class="col-sm-7">
+      <div id="finalbox">
+        <div id="default">
+          <h3>Welcome to Find Your Wine! </h3>
+          <h4> Here you will find a wine based on your personal preferences. </h4>
+          <h5> Start by selecting a country, followed by what type of wine you prefer, the grape you like and then
+            adjust the taste range.
+            All the wines matching your criterias will be displayed in the list below.
+            Click on one of the wines to find out more about it.
+          </h5>
+          <h4> Good Luck! </h4>
+        </div>
+        <div id="finalinfo">
+
+          <div class="d-flex justify-content-center">
+            <div class="col">
+              <div id="imagebox"></div>
+            </div>
+
+            <div class="col" id="textbox1">
+              <div id="name"></div>
+              <div id="producer">
+              </div>
+              <div id="country"></div>
+              <div id="taste_description"></div>
+            </div>
+
+            <div class="col" id="textbox2">
+              <div id = "usage_text">Usage: <span id="usage"> </span></div>
+
+              <div id = "taste_text"> Taste category: <span id="taste_category"> </span></div>
+
+              <div id = "year_text"> Year: <span id="year"> </span></div>
+
+              <div id = "price_text"> Price: <span id="price"> </span></div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filter wine -->
+  <div class="d-flex align-content-center flex-wrap">
+    <div class="col-sm-7">
+      <div id="filter">
+        <div class="d-flex align-content-start flex-wrap">
+          <div class="col-sm-5">
+            <div id = "type_text">TYPE</div>
+            <div id="filter-boxes" class="form-item form-checkboxes-inline"></div>
+            <div id ="grape_text" >GRAPE
+            </div>
+            <div id="filter-boxes_grapes" class="form-item form-checkboxes checkbox"></div>
+          </div>
+
+          <div class="col-sm-5 col-md-offset-1">
+            <div id="slider">
+              <div id = "taste_text"> TASTE</div>
+              <div id = "sweetness_text"> Sweetness: <span id="sweetnesstextmin">0</span> - <span id="sweetnesstextmax">100</span>%</div>
+              <div id="sweetness-slider"></div>
+              <br>
+              <div id = "fruitacid_text"> Fruit Acid: <span
+                  id="fruittextmin">0</span> - <span id="fruittextmax">100</span>%</div>
+              <div id="fruit-slider"></div>
+              <br>
+              <div id = "fullbody_text">Full Body: <span
+                  id="bodytextmin">0</span>-<span id="bodytextmax">100</span>%</div>
+              <div id="body-slider"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-5">
+      <div id="list">
+        <button class="refresh_button" onClick="window.location.reload()"> Reset choices </button>
+        <div id="list-container"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- d3 -->
+  <script src="libs/d3/d3.min.js"></script>
+  <script src="libs/d3/d3.v3.min.js"></script>
+  <script src="libs/d3/d3.slider.js"></script>
+  <script src="libs/d3/d3.v3.min.js"></script>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <link data-require="bootstrap-css@*" data-semver="3.2.0" rel="stylesheet"
+    href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+  <script data-require="d3@*" data-semver="3.4.6" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.6/d3.min.js"></script>
+  <script data-require="crossfilter@*" data-semver="3.0.0"
+    src="//cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.1/crossfilter.min.js"></script>
+
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="libs/d3/d3.slider.js"></script>
+
+  <!-- our scripts -->
+  <script src="js/map.js"></script>
+  <script src="js/finalWine.js"></script>
+  <script src="js/filterData.js"></script>
+  <script src="js/wineList.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- MAP -->
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+</body>
+
+</html>
