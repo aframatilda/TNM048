@@ -31,13 +31,13 @@ function finalWine(clicked_wine) {
     div.appendChild(img);
 
     var styles = {
-        "height": "100%",
+        "height": "90%",
         "width":"auto",
         "display": "flex",
         "margin-left": "auto",
         "margin-right": "auto",
         "padding-top": "10%",
-        "padding-bottom": "10%",
+        "padding-bottom": "20%",
     }
 
     Object.assign(img.style, styles)
